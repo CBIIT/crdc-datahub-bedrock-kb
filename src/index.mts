@@ -122,7 +122,7 @@ export const handler = awslambda.streamifyResponse(async (event: APIGatewayProxy
 
     const question = body?.question;
     const sessionId = body?.sessionId || crypto.randomUUID();
-    const conversationHistory = body?.conversationHistory || [];
+    const conversationHistory = body?.conversationHistory || []; // TODO: Use ephemeral storage for history
 
     if (!question) {
       return responseStream.end(JSON.stringify({ error: "Missing 'question' in request body" }));
