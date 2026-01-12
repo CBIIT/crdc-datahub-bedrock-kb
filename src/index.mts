@@ -9,8 +9,8 @@ import {
   ConverseStreamCommandInput,
 } from "@aws-sdk/client-bedrock-runtime";
 import { APIGatewayProxyEvent } from "aws-lambda";
-import { safeParseJSON } from "./utils/json";
-import { formatUserPrompt } from "./utils/conversation";
+import { safeParseJSON } from "./utils/json.mjs";
+import { formatUserPrompt } from "./utils/conversation.mjs";
 
 const REGION = process.env.AWS_REGION;
 const KNOWLEDGE_BASE_ID = process.env.KNOWLEDGE_BASE_ID;
@@ -55,21 +55,17 @@ $query$
 ## RESPONSE RULES
 
 - Answer ONLY the user's question
-- Base the answer strictly on <search_results>.
+- Do NOT guess or infer beyond the provided data.
 - Do NOT mention or refer to:
   - search results
   - the existence of a search process
   - the tags <search_results> or <question>
   - information being provided to you
 - Respond as if the information is inherently known.
-- Do NOT guess or infer beyond the provided data.
-- Answer in English.
 - Keep the response concise and helpful.
-- Use bullet points when it improves clarity.
-- Use plain ASCII text only.
-- Do NOT use markdown or other formatting symbols.
-- Use consistent formatting. Do not switch between bullet points and dashes, etc.
 - If the question is ambiguous or unclear, ask for clarification instead of guessing.
+- Use markdown formatting naturally where appropriate. Do not use excessive formatting.
+- Answer exclusively in English.
 
 ## RESPONSE FALLBACK
 
