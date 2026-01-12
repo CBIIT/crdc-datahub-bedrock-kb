@@ -4,7 +4,7 @@ TODO
 
 # Getting Started
 
-TODO
+TODO: Client usage example, architecture diagram (how it interacts with KB + Converse), etc.
 
 ```JavaScript
 async function askQuestion(question, sessionId = null) {
