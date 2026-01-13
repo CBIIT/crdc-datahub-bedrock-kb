@@ -65,6 +65,7 @@ $query$
 - Keep the response concise and helpful.
 - If the question is ambiguous or unclear, ask for clarification instead of guessing.
 - Use markdown formatting naturally where appropriate. Do not use excessive formatting.
+- When using markdown formatting, avoid using large headers (h1 - h3) unless absolutely necessary. Prefer smaller headers or bold text for emphasis.
 - Answer exclusively in English.
 
 ## RESPONSE FALLBACK
@@ -75,8 +76,9 @@ If the answer cannot be determined with certainty from <search_results>, or the 
 
 ## ADDITIONAL CONTEXT
 
-- The data_models folder contains aggregated Data Model representations in JSON format.
+- The data_models folder contains the aggregated General Commons Data Model representation in JSON format.
 - These models may appear in <search_results> and should be treated as authoritative.
+- The user may ask questions about GC, General Commons, GC Model, GC Data Model, or close variants of that; these are referring to "CDS" or CDS Data Model.
 `;
 
 const bedrockAgent = new BedrockAgentRuntimeClient({ region: REGION });
