@@ -1,3 +1,7 @@
+> [!Warning]
+> This project is archived and will not be maintained. It should only be used as a reference. Refer to the superseded version here – https://github.com/CBIIT/crdc-datahub-chatbot-backend
+
+
 # Introduction
 
 This project provides the base implementation for a serverless question-answering system using AWS Bedrock and a Knowledge Base (KB). It handles incoming questions, retrieves relevant context from the KB, and generates answers using the Converse API.
